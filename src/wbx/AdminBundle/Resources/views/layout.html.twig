@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/wbxadmin/css/screen.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block language %}
+    {% set locale = app.request.getLocale %}
+    {% set route_name = app.request.attributes.get("_route") %}
+    {% set route_params = app.request.attributes.get("_route_params") %}
+
+    {% for l in locales %}
+        {% if (l == locale) %}
+            <button class="btn btn-mini btn-primary disabled" disabled="disabled">{{ l }}</button>
+        {% else %}
+            <a class="btn btn-mini" href="{{ path(route_name, route_params|merge({"_locale": l})) }}">{{ l }}</a>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+    <div class="row"></div>
+
+    <a class="btn" href="{{ path('default') }}">Blog</a>
+
+    <a class="btn {% if "admin_author" in app.request.attributes.get('_route') %} btn-inverse {% endif %}" href="{{ path('admin_author') }}">Author</a>
+
+    <a class="btn {% if "admin_post" in app.request.attributes.get('_route') %} btn-inverse {% endif %}" href="{{ path('admin_post') }}">Post</a>
+
+    <hr>
+{% endblock %}
+
+
+
+
+
+

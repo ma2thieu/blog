@@ -1,0 +1,17 @@
+{% if form_errors(form) != "" %}
+<div class="alert alert-error">{{ form_errors(form) }}</div>
+{% endif %}
+
+<div class="five columns alpha">
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.lastname) }}
+</div>
+
+<div class="row"></div>
+
+<div class="sixteen columns alpha">
+    {{ form_rest(form) }}
+
+    <a class="btn" href="{{ path('admin_author') }}"><i class="icon-remove"></i> Cancel</a>
+    <button class="btn btn-success" type="submit"><i class="icon-ok icon-white"></i> SAVE</button>
+</div>

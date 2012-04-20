@@ -1,0 +1,143 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+
+framework:
+    #esi:             ~
+    #translator:      { fallback: %locale% }
+    secret:          %secret%
+    charset:         UTF-8
+    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    form:            true
+    csrf_protection: true
+    validation:      { enable_annotations: true }
+    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    default_locale:  %locale%
+    session:
+        auto_start:     true
+
+# Twig Configuration
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+    globals:
+        locales: %locales%
+    form:
+        resources:
+            - 'LexikFormFilterBundle:Form:form_div_layout.html.twig'
+            - '::form.html.twig'
+
+# Assetic Configuration
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    bundles:        [ ]
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        #closure:
+        #    jar: %kernel.root_dir%/Resources/java/compiler.jar
+        #yui_css:
+        #    jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver:   %database_driver%
+        path:     %database_path%
+        user:     %database_user%
+        password: %database_password%
+        charset:  UTF8
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        entity_managers:
+            default:
+                mappings:
+                    wbxCoreBundle: ~
+                    wbxFileBundle: ~
+                    gedmo_translatable:
+                        type: annotation
+                        prefix: Gedmo\Translatable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+                        alias: GedmoTranslatable # this one is optional and will default to the name set for the mapping
+                    gedmo_translator:
+                        type: annotation
+                        prefix: Gedmo\Translator\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translator/Entity"
+                        alias: GedmoTranslator # this one is optional and will default to the name set for the mapping
+                    gedmo_loggable:
+                        type: annotation
+                        prefix: Gedmo\Loggable\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                        alias: GedmoLoggable # this one is optional and will default to the name set for the mapping
+                    gedmo_tree:
+                        type: annotation
+                        prefix: Gedmo\Tree\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
+                        alias: GedmoTree # this one is optional and will default to the name set for the mapping
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: %mailer_transport%
+    host:      %mailer_host%
+    username:  %mailer_user%
+    password:  %mailer_password%
+    spool:     { type: memory }
+
+
+liip_imagine:
+    filter_sets:
+        thumb_small_out:
+            quality: 70
+            filters:
+                thumbnail: { size: [80, 80], mode: outbound }
+        thumb_recipe_out:
+            quality: 70
+            filters:
+                thumbnail: { size: [160, 160], mode: outbound }
+        thumb_press_out:
+            quality: 70
+            filters:
+                thumbnail: { size: [600, 320], mode: outbound }
+        thumb_small_in:
+            quality: 70
+            filters:
+                thumbnail: { size: [80, 80], mode: inset }
+        home_news_1:
+            quality: 70
+            filters:
+                thumbnail: { size: [600, 320], mode: outbound }
+        home_news_2:
+            quality: 70
+            filters:
+                thumbnail: { size: [180, 160], mode: outbound }
+        home_news_3:
+            quality: 70
+            filters:
+                thumbnail: { size: [180, 160], mode: outbound }
+        home_news_4:
+            quality: 70
+            filters:
+                thumbnail: { size: [180, 160], mode: outbound }
+        recipe:
+            quality: 70
+            filters:
+                thumbnail: { size: [600, 320], mode: outbound }
+
+
+# StofDoctrineExtension
+stof_doctrine_extensions:
+    default_locale: en
+    translation_fallback: true
+    orm:
+        default:
+            translatable: true
+            sluggable: true
+
+
+gregwar_captcha:
+    width: 120
+    height: 40
+    length: 4
+    as_file: true
+

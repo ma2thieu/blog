@@ -1,0 +1,30 @@
+{% extends 'wbxSiteBundle::layout.html.twig' %}
+
+
+{% block content %}
+
+    <div class="six columns offset-by-five">
+         {% for post in pagination %}
+             <h4><a href="{{ path("post", { 'slug': post.slug }) }}">{{ post.title }}</a></h4>
+             <h6>by {{ post.author }}</h6>
+             <p>{{ post.getSummary(200) }}</p>
+         {% endfor %}
+    </div>
+
+    <div class="row"></div>
+
+    <div id="pagination" class="six columns offset-by-five">
+        <div id="pagination_info" class="two columns alpha">
+            {{ pagination.getPaginationData()["totalCount"] }} records found.
+        </div>
+        <div id="pagination_btn" class="four columns omega">
+            {{ pagination.render()|raw }}
+        </div>
+    </div>
+
+    <div class="row"></div>
+
+
+{% endblock %}
+
+

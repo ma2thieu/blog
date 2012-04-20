@@ -1,0 +1,13 @@
+{% extends 'wbxAdminBundle::layout.html.twig' %}
+
+
+{% block content %}
+
+    {% include 'wbxAdminBundle::flashes.html.twig' %}
+
+    <form action="{{ path('admin_post_create') }}" method="post" {{ form_enctype(form) }}>
+        {% include 'wbxAdminBundle:Post:form.html.twig' with { 'form' : form } %}
+    </form>
+
+{% endblock %}
+

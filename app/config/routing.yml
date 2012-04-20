@@ -1,0 +1,40 @@
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+
+
+
+wbxSiteBundle:
+    resource: "@wbxSiteBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    defaults:  { _locale: en }
+    requirements:
+        _locale: en|fr
+
+wbxAdminBundle:
+    resource: "@wbxAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin/{_locale}
+    defaults:  { _locale: en }
+    requirements:
+        _locale: en|fr
+
+admin_default:
+    pattern:  /admin
+    defaults: { _controller: wbxAdminBundle:Default:index }
+
+default:
+    pattern:  /
+    defaults: { _controller: wbxSiteBundle:Default:index }
+
+
+_imagine:
+    resource: .
+    type:     imagine
+
+wbxFileBundle_download:
+    pattern:  /wbxfile/download/{class}/{id}
+    defaults: { _controller: wbxFileBundle:File:download }
+

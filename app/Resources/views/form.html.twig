@@ -1,0 +1,62 @@
+{% extends "form_div_layout.html.twig" %}
+
+{% block generic_label %}
+{% spaceless %}
+    {% if required %}
+        {% set attr = attr|merge({'class': attr.class|default('') ~ ' required'}) %}
+    {% endif %}
+    <label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}>
+        {{ label|trans }}
+        {% if required %}*{%  endif %}
+    </label>
+{% endspaceless %}
+{% endblock %}
+
+
+{% block field_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+    <ul class="error">
+        {% for error in errors %}
+            <li>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endspaceless %}
+{% endblock field_errors %}
+
+
+{% block datepicker_widget %}
+{% spaceless %}
+    {% if widget == 'single_text' %}
+        {{ block('field_widget') }}
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#{{ id }}").datepicker({
+                    dateFormat: '{{ dateFormat }}',
+                    yearRange:  '{{ yearRange }}',
+                    changeMonth: true,
+                    changeYear: true
+                });
+            });
+        </script>
+    {% else %}
+        <div {{ block('widget_container_attributes') }}>
+            {{ date_pattern|replace({
+                '{{ year }}':  form_widget(form.year),
+                '{{ month }}': form_widget(form.month),
+                '{{ day }}':   form_widget(form.day),
+            })|raw }}
+        </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock datepicker_widget %}
+
+
+{% block field_widget %}
+{% spaceless %}
+    {% set type = type|default('text') %}
+    <input type="{{ type }}" {{ block('widget_attributes') }} {% if type == "password" %} autocomplete="off" {% endif %} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{% endspaceless %}
+{% endblock field_widget %}
+

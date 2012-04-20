@@ -1,0 +1,35 @@
+{% extends '::base.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/wbxsite/css/screen.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block language %}
+    {% set locale = app.request.getLocale %}
+    {% set route_name = app.request.attributes.get("_route") == "default" ? "index" : app.request.attributes.get("_route") %}
+    {% set route_params = app.request.attributes.get("_route_params") %}
+
+    {% for l in locales %}
+        {% if (l == locale) %}
+            <span>{{ l }}</span>
+        {% else %}
+            <a href="{{ path(route_name, route_params|merge({"_locale": l})) }}">{{ l }}</a>
+        {% endif %}
+
+        {% if not loop.last %} | {% endif %}
+    {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+    <div class="row"></div>
+        <a href="{{ path("default") }}">home</a>
+        |
+    <a href="{{ path("admin") }}">admin</a>
+    <hr>
+{% endblock %}
+
+

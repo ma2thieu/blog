@@ -1,0 +1,73 @@
+div#content div#nav ul ul, ul ol,
+div#content div#nav ol ol, ol ul {
+    margin-left: 1.5em;
+}
+
+td ul,
+td ul li {
+    margin-bottom: 0;
+}
+
+
+div.filters {
+    margin-left: 0;
+}
+
+div.filters div {
+    float: left;
+    margin-right: 30px;
+}
+
+div.filters div.action {
+    margin-right: 0;
+    padding-top: 18px;
+}
+
+
+div.filters input[type="text"],
+div.filters input[type="password"],
+div.filters input[type="email"],
+div.filters textarea,
+div.filters select {
+    width: 153px;
+}
+
+
+/* #1280
+================================================== */
+
+    /* Note: Design for a width of 1280 */
+
+    @media only screen and (min-width: 1280px) {
+    }
+
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+    }
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+    }
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+    }
+
+
+
+

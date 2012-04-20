@@ -1,0 +1,84 @@
+{
+    "name": "symfony/framework-standard-edition",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "lexik/form-filter-bundle",
+                "version": "1.0",
+                "source": {
+                    "url": "git://github.com/lexik/LexikFormFilterBundle.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                },
+                "autoload": {
+                    "psr-0": { "Lexik\\Bundle\\FormFilterBundle": "" }
+                },
+                "target-dir": "Lexik/Bundle/FormFilterBundle"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "gregwar/captcha-bundle",
+                "version": "1.0",
+                "source": {
+                    "url": "git://github.com/Gregwar/CaptchaBundle.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                },
+                "autoload": {
+                    "psr-0": { "Gregwar\\CaptchaBundle": "" }
+                },
+                "target-dir": "Gregwar/CaptchaBundle"
+            }
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/symfony": "2.1.*",
+        "doctrine/orm": "2.2.0",
+        "doctrine/doctrine-bundle": "dev-master",
+        "twig/extensions": "dev-master",
+        "symfony/assetic-bundle": "dev-master",
+        "symfony/swiftmailer-bundle": "dev-master",
+        "symfony/monolog-bundle": "dev-master",
+        "sensio/distribution-bundle": "dev-master",
+        "sensio/framework-extra-bundle": "dev-master",
+        "sensio/generator-bundle": "dev-master",
+        "jms/security-extra-bundle": "1.1.0",
+        "jms/di-extra-bundle": "1.0.1",
+        "knplabs/knp-components": "dev-master",
+        "knplabs/knp-paginator-bundle": "dev-master",
+        "liip/imagine-bundle": "dev-master",
+        "stof/doctrine-extensions-bundle": "dev-master",
+        "egeloen/ckeditor-bundle": "dev-master",
+        "wbx/file-bundle": "dev-master",
+        "bcc/extra-tools-bundle": "dev-master",
+        "craue/twigextensions-bundle": "dev-master",
+        "lexik/form-filter-bundle": "1.0.*",
+        "gregwar/captcha-bundle": "1.0.*"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    }
+}

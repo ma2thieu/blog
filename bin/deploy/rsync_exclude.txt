@@ -1,0 +1,26 @@
+# --- Project files
+/app/cache/*
+/app/logs/*
+/app/config/parameters.yml
+/web/*_dev.php
+/web/uploads/*
+/web/media/*
+/bin
+/doc
+
+# --- SCM files
+.arch-params
+.bzr
+_darcs
+.git
+.gitignore
+.hg
+.monotone
+.svn
+CVS
+
+# --- IDE
+.idea
+
+# --- OSX files
+.DS_Store

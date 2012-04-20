@@ -1,0 +1,80 @@
+html {
+    font: 12px "HelveticaNeue";
+}
+
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+
+ul {
+    list-style: circle;
+    padding-left: 40px;
+}
+
+ul ul {
+    font-size: 100%;
+}
+
+
+div#pagination {
+    margin-top: 15px;
+}
+
+div#pagination div#pagination_info {
+    text-align: left;
+    font-size: 12px;
+}
+
+div#pagination div#pagination_btn {
+    text-align: right;
+}
+
+
+div#language {
+    text-align: right;
+}
+
+
+/* --- http://blog.tafticht.com/2007/10/01/tutorial-de-creation-dune-barre-de-pagination-tout-en-css-avec-15-exemples/ */
+div#pagination div#pagination_btn div.pagination {
+    font-size: 12px;
+}
+
+div#pagination div#pagination_btn div.pagination a {
+	padding: 2px 5px 2px 5px;
+	/*margin-right: 2px;*/
+	border: 1px solid #ddd;
+	text-decoration: none;
+	color: #aaa;
+}
+
+div#pagination div#pagination_btn div.pagination a:hover, div.pagination a:active {
+	padding: 2px 5px 2px 5px;
+	/*margin-right: 2px;*/
+	border: 1px solid #a0a0a0;
+}
+
+div#pagination div#pagination_btn div.pagination span.current {
+	padding: 2px 5px 2px 5px;
+	/*margin-right: 2px;*/
+	border: 1px solid #e0e0e0;
+	font-weight: bold;
+	background-color: #f0f0f0;
+	color: #aaa;
+}
+
+div#pagination div#pagination_btn div.pagination span.disabled {
+	padding: 2px 5px 2px 5px;
+	margin-right: 2px;
+	border: 1px solid #f3f3f3;
+	color: #ccc;
+}
+/* --- */
+
+
+
+
+

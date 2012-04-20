@@ -1,0 +1,16 @@
+{% if app.session.hasFlash('warning') %}
+    <div class="alert">{{ app.session.flash('warning') }}</div>
+{% endif %}
+
+{% if app.session.hasFlash('error') %}
+    <h4 class="alert-heading">Error!</h4>
+    <div class="alert alert-error">{{ app.session.flash('error') }}</div>
+{% endif %}
+
+{% if app.session.hasFlash('success') %}
+    <div class="alert alert-success">{{ app.session.flash('success') }}</div>
+{% endif %}
+
+{% if app.session.hasFlash('info') %}
+    <div class="alert alert-info">{{ app.session.flash('info') }}</div>
+{% endif %}

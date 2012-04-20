@@ -1,0 +1,61 @@
+{% extends 'wbxAdminBundle::layout.html.twig' %}
+
+
+{% block content %}
+
+    {% include 'wbxAdminBundle::flashes.html.twig' %}
+
+    <div class="filters sixteen columns alpha">
+        <form action="{{ path(app.request.attributes.get('_route'), { 'page': 1 }) }}" method="post">
+            {{ form_widget(form_filter) }}
+            <div class="action">
+                <a href="{{ path(app.request.attributes.get('_route'), { 'filter_reset': true, 'page': 1 }) }}" class="btn"><i class="icon-refresh"></i> Reset</a>
+                <button class="btn btn-primary" type="submit"><i class="icon-search icon-white"></i> Filter</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row"></div>
+
+    <div id="list" class="sixteen columns alpha">
+        <table class="table table-bordered table-condensed">
+            <thead>
+                <tr>
+                    <th><a class="btn btn-success" href="{{ path('admin_author_new') }}"><i class="icon-plus icon-white"></i> New</a></th>
+                    <th>{{ pagination.sortable('Firstname', 'q.firstname')|raw }}</th>
+                    <th>{{ pagination.sortable('Lastname', 'q.lastname')|raw }}</th>
+                    <th>Posts</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in pagination %}
+                <tr>
+                    <td>
+                        <a class="btn btn-small btn-primary" href="{{ path('admin_author_edit', { 'id': entity.id }) }}"><i class="icon-cog icon-white"></i> Edit</a>
+                    </td>
+                    <td>{{ entity.firstname }}</td>
+                    <td>{{ entity.lastname }}</td>
+                    <td>
+                        {% for post in entity.posts %}
+                            <a class="btn btn-mini" href="{{ path('admin_post_edit', { 'id': post.id }) }}"><i class="icon-cog"></i> {{ post }}</a>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div id="pagination" class="sixteen columns alpha">
+        <div id="pagination_info" class="eight columns alpha">
+            {{ pagination.getPaginationData()["totalCount"] }} records found.
+        </div>
+        <div id="pagination_btn" class="eight columns omega">
+            {{ pagination.render()|raw }}
+        </div>
+    </div>
+
+    <div class="row"></div>
+
+{% endblock %}
+

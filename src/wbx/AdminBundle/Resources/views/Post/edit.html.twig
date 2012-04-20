@@ -1,0 +1,21 @@
+{% extends 'wbxAdminBundle::layout.html.twig' %}
+
+{% block content %}
+
+    {% include 'wbxAdminBundle::flashes.html.twig' %}
+
+    <form action="{{ path('admin_post_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+        {% include 'wbxAdminBundle:Post:form.html.twig' with { 'form' : edit_form } %}
+    </form>
+
+    <div class="row"></div>
+
+    <form action="{{ path('admin_post_delete', { 'id': entity.id }) }}" method="post" onsubmit="return confirm('Are you sure ?')">
+        {{ form_widget(delete_form) }}
+        <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
+
+    <div class="row"></div>
+
+{% endblock %}
+
