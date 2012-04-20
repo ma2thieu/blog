@@ -3,4 +3,28 @@
 
 {% block content %}
     {% include 'wbxAdminBundle::flashes.html.twig' %}
+
+    <div class="three columns alpha">
+        <img src="{{ asset("bundles/wbxadmin/images/logo_admin_symfony.png") }}" />
+    </div>
+
+    <div class="twelve columns offset-by-one omega">
+        <h4>blog administration panel</h4>
+
+        <ul>
+            <li>
+                Create a new contributor by clicking on "Author"
+            </li>
+            <li>
+                Add a new article by clicking on "Post"
+            </li>
+            <li>
+                You can write an article in english and french.
+            </li>
+        </ul>
+
+        <blockquote>Try to turn off internet, it still works. This is not a blog, this is a software</blockquote>
+    </div>
+
+
 {% endblock %}
