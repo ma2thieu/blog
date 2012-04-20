@@ -8,7 +8,5 @@ build/
 vendor/
 composer.phar
 
-/app/config/parameters.yml
-
 .DS_Store
 .idea

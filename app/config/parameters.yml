@@ -1,0 +1,16 @@
+parameters:
+    database_driver:    pdo_sqlite
+    database_path:      %kernel.root_dir%/config/sqlite.db
+    database_user:      root
+    database_password:  111111
+
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
+
+    locales: [en, fr]
+    locale: en
+
+    secret: 278cee2c92aaa87da58f101a599bcb10104
+
