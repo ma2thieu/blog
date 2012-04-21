@@ -44,6 +44,16 @@ class Post {
      */
     private $author;
 
+    /**
+     * @ORM\OneToMany(targetEntity="PostFile", mappedBy="post", cascade={"all"}, orphanRemoval=true)
+     */
+    protected $files;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post", cascade={"all"}, orphanRemoval=false)
+     */
+    protected $comments;
+
 
     public function __toString() {
         return $this->title;
@@ -94,6 +104,48 @@ class Post {
 
     public function getAuthor() {
         return $this->author;
+    }
+
+
+    public function addFile(PostFile $file) {
+        $file->setPost($this);
+        $this->files[] = $file;
+    }
+
+    public function removeFile(PostFile $file) {
+        // TODO
+    }
+
+    public function getFiles() {
+        return $this->files;
+    }
+
+    public function setFiles($files) {
+        foreach ($files as $file) {
+            $file->setPost($this);
+        }
+        $this->files = $files;
+    }
+
+
+    public function addComment(Comment $comment) {
+        $comment->setPost($this);
+        $this->comments[] = $comment;
+    }
+
+    public function removeComment(Comment $comment) {
+        // TODO
+    }
+
+    public function getComments() {
+        return $this->comments;
+    }
+
+    public function setComments($comments) {
+        foreach ($comments as $comment) {
+            $comment->setPost($this);
+        }
+        $this->comments = $comments;
     }
 
 }

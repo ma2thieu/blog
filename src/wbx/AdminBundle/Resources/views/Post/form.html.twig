@@ -2,10 +2,22 @@
 <div class="alert alert-error">{{ form_errors(form) }}</div>
 {% endif %}
 
-<div class="five columns alpha">
+<div class="six columns alpha">
     {{ form_row(form.author) }}
     {{ form_row(form.title) }}
     {{ form_row(form.text) }}
+</div>
+
+<div class="five columns">
+    <fieldset>
+        {% include 'wbxAdminBundle:PostFile:embed.html.twig' with { 'files' : form.files } %}
+    </fieldset>
+</div>
+
+<div class="five columns omega">
+    <fieldset>
+        {% include 'wbxAdminBundle:Comment:embed.html.twig' with { 'comments' : form.comments } %}
+    </fieldset>
 </div>
 
 <div class="row"></div>
@@ -16,3 +28,5 @@
     <a class="btn" href="{{ path('admin_post') }}"><i class="icon-remove"></i> Cancel</a>
     <button class="btn btn-success" type="submit"><i class="icon-ok icon-white"></i> SAVE</button>
 </div>
+
+

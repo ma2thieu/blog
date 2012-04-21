@@ -1,0 +1,51 @@
+{% block collection_widget %}
+{% spaceless %}
+	{% if prototype is defined %}
+	    {% set attr = attr|merge({'data-prototype': block('collection_item_prototype_widget') }) %}
+	{% endif %}
+    <div id="files_collection" {{ block('widget_container_attributes') }}>
+        <div id="files_collection_items">
+            {% for file in form %}
+            	{{ block('collection_item_widget') }}
+            {% endfor %}
+		    {{ form_rest(form) }}
+        </div>
+        <a id="files_add" class="btn" href="javascript:"><i class="icon-plus"></i> Add a file</a>
+    </div>
+{% endspaceless %}
+{% endblock collection_widget %}
+
+{% block collection_item_prototype_widget %}
+{% spaceless %}
+    <fieldset>
+        {{ form_label(prototype.file) }}
+        {{ form_errors(prototype.file) }}
+        <blockquote>
+            {% include 'wbxFileBundle:File:embed.html.twig' with {
+                'form'              : prototype.file,
+                'class'             : "wbxCoreBundle:File",
+                'imagine_filter'    : "thumb_small_in"
+            } %}
+            <div class="action"><a class="file_delete btn btn-danger" href="#"><i class="icon-trash icon-white"></i> delete</a></div>
+        </blockquote>
+    </fieldset>
+{% endspaceless %}
+{% endblock collection_item_prototype_widget %}
+
+{% block collection_item_widget %}
+{% spaceless %}
+    <fieldset>
+        {{ form_label(file.file) }}
+        {{ form_errors(file.file) }}
+        <blockquote>
+            {% include 'wbxFileBundle:File:embed.html.twig' with {
+                'form'              : file.file,
+                'class'             : "wbxCoreBundle:File",
+                'imagine_filter'    : "thumb_small_in"
+            } %}
+            <div class="action"><a class="file_delete btn btn-danger" href="#"><i class="icon-trash icon-white"></i> delete</a></div>
+        </blockquote>
+    </fieldset>
+{% endspaceless %}
+{% endblock collection_item_widget %}
+

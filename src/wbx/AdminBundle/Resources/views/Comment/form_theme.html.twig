@@ -1,0 +1,43 @@
+{% block collection_widget %}
+{% spaceless %}
+	{% if prototype is defined %}
+	    {% set attr = attr|merge({'data-prototype': block('collection_item_prototype_widget') }) %}
+	{% endif %}
+    <div id="comments_collection" {{ block('widget_container_attributes') }}>
+        <div id="comments_collection_items">
+            {% for comment in form %}
+            	{{ block('collection_item_widget') }}
+            {% endfor %}
+		    {{ form_rest(form) }}
+        </div>
+        <a id="comments_add" class="btn" href="javascript:"><i class="icon-plus"></i> Add a comment</a>
+    </div>
+{% endspaceless %}
+{% endblock collection_widget %}
+
+{% block collection_item_prototype_widget %}
+{% spaceless %}
+    <fieldset>
+        <label class=" required"> Comment </label>
+        {{ form_errors(prototype.text) }}
+        <blockquote>
+            {{ form_widget(prototype.text) }}
+            <div class="action"><a class="file_delete btn btn-danger" href="#"><i class="icon-trash icon-white"></i> delete</a></div>
+        </blockquote>
+    </fieldset>
+{% endspaceless %}
+{% endblock collection_item_prototype_widget %}
+
+{% block collection_item_widget %}
+{% spaceless %}
+    <fieldset>
+        <label class=" required"> Comment </label>
+        {{ form_errors(comment.text) }}
+        <blockquote>
+            {{ form_widget(comment.text) }}
+            <div class="action"><a class="file_delete btn btn-danger" href="#"><i class="icon-trash icon-white"></i> delete</a></div>
+        </blockquote>
+    </fieldset>
+{% endspaceless %}
+{% endblock collection_item_widget %}
+

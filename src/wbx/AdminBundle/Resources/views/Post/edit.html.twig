@@ -19,3 +19,9 @@
 
 {% endblock %}
 
+
+{% block my_js %}
+    {{ parent() }}
+    {% include 'wbxAdminBundle:PostFile:embed.js.twig' with { 'files' : edit_form.files } %}
+    {% include 'wbxAdminBundle:Comment:embed.js.twig' with { 'comments' : edit_form.comments } %}
+ {% endblock %}

@@ -23,7 +23,7 @@ class DefaultController extends Controller {
         $pagination = $paginator->paginate(
             $em->getRepository('wbxCoreBundle:Post')->findAll(),
             $this->get('request')->query->get('page', 1),
-            6
+            4
         );
 
         return $this->render('wbxSiteBundle:Default:index.html.twig', array(

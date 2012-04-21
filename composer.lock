@@ -1,5 +1,5 @@
 {
-    "hash": "303f54a3282e28dabafff1ae00544a61",
+    "hash": "da3a10e442f1b597e5f7597efd6e8049",
     "packages": [
         {
             "package": "bcc/extra-tools-bundle",
@@ -22,11 +22,12 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "dd3d35dd28e864fb908a70f8b206d1209aa2c333"
+            "source-reference": "550bee05123a592d5010415364396c4c7b20c65c"
         },
         {
             "package": "doctrine/orm",
-            "version": "2.2.0"
+            "version": "2.2.x-dev",
+            "source-reference": "159b6f89471ac05f1c1ef2d53cc2c989ce9215a3"
         },
         {
             "package": "egeloen/ckeditor-bundle",
@@ -36,7 +37,7 @@
         {
             "package": "gedmo/doctrine-extensions",
             "version": "dev-master",
-            "source-reference": "49cee3615341b8c426bac121219539cdac55c344"
+            "source-reference": "ec5f3a680b127ebb3b5ae7caaea978d20a08af50"
         },
         {
             "package": "gregwar/captcha-bundle",
@@ -69,7 +70,7 @@
         {
             "package": "knplabs/knp-components",
             "version": "dev-master",
-            "source-reference": "13cd93f6b1c7b48703274d51ad3aac62aad55fff"
+            "source-reference": "b5e8006489e74b84d3ad40a5b8a70b02bc9101fa"
         },
         {
             "package": "knplabs/knp-paginator-bundle",
@@ -79,7 +80,7 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "eb3b5eb732e5f172d5aa12dea0af36b7989c18b3"
+            "source-reference": "3acfb6afa50dd1dca387a8dfb641cd3b98a8584d"
         },
         {
             "package": "lexik/form-filter-bundle",
@@ -97,7 +98,7 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "38be63ebb45cc1fbeaff3f2bdf6d0ed216305a24"
+            "source-reference": "a2f09ae4b38533d9f16083b740f6a77fb5efd313"
         },
         {
             "package": "sensio/framework-extra-bundle",
@@ -107,12 +108,12 @@
         {
             "package": "sensio/generator-bundle",
             "version": "dev-master",
-            "source-reference": "06d07e0514d310be8d5630bfd93637136991c30c"
+            "source-reference": "5f2ded5e5679f66c604f128d5650715bb81d7d7c"
         },
         {
             "package": "stof/doctrine-extensions-bundle",
             "version": "dev-master",
-            "source-reference": "59be31ee6d89f0af0e055385e6b7474ebed161db"
+            "source-reference": "f141a698d65271a18d86469c1f7b29d7e24170dd"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -126,7 +127,7 @@
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "source-reference": "289442e385e7c0fe4aa2e8884d11e774a8f9ad99"
+            "source-reference": "aea0145e5669ed855db430e0f53536fab16b6dd7"
         },
         {
             "package": "symfony/swiftmailer-bridge",
@@ -136,12 +137,12 @@
         {
             "package": "symfony/swiftmailer-bundle",
             "version": "dev-master",
-            "source-reference": "75f8f95c201922a966274547131b33291d15d51b"
+            "source-reference": "1c6b57fe57210e9dcb5b4586d6572f47d17a25d7"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "83a0edd24bcecf5155c71bd34aee55a0ee28c454",
+            "source-reference": "6c714095fa3e74c4a5466037f02e1845b9130d35",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
@@ -152,13 +153,13 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "037f86aa550737abf633e991f3606b9de5a69657",
+            "source-reference": "a929d0336b1b39b8e6de5547d81bd65a960ce31d",
             "alias": "1.7.9999999.9999999-dev"
         },
         {
             "package": "wbx/file-bundle",
             "version": "dev-master",
-            "source-reference": "9225488d9a7bf9130c416056c04bdb1fcc11c766"
+            "source-reference": "168549ef1941f379944ff01e8ba6a9828168937b"
         }
     ],
     "packages-dev": null,

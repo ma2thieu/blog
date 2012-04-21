@@ -9,5 +9,13 @@
         {% include 'wbxAdminBundle:Post:form.html.twig' with { 'form' : form } %}
     </form>
 
+    <div class="row"></div>
+
 {% endblock %}
 
+
+{% block my_js %}
+     {{ parent() }}
+     {% include 'wbxAdminBundle:PostFile:embed.js.twig' with { 'files' : form.files } %}
+    {% include 'wbxAdminBundle:Comment:embed.js.twig' with { 'comments' : form.comments } %}
+ {% endblock %}

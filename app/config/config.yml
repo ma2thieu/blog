@@ -47,6 +47,14 @@ doctrine:
         path:     %database_path%
         user:     %database_user%
         password: %database_password%
+
+        #driver:   %database_driver%
+        #host:     %database_host%
+        #port:     %database_port%
+        #dbname:   %database_name%
+        #user:     %database_user%
+        #password: %database_password%
+
         charset:  UTF8
     orm:
         auto_generate_proxy_classes: %kernel.debug%
@@ -88,41 +96,89 @@ swiftmailer:
 liip_imagine:
     filter_sets:
         thumb_small_out:
-            quality: 70
+            quality: 80
             filters:
                 thumbnail: { size: [80, 80], mode: outbound }
-        thumb_recipe_out:
-            quality: 70
-            filters:
-                thumbnail: { size: [160, 160], mode: outbound }
-        thumb_press_out:
-            quality: 70
-            filters:
-                thumbnail: { size: [600, 320], mode: outbound }
         thumb_small_in:
-            quality: 70
+            quality: 80
             filters:
                 thumbnail: { size: [80, 80], mode: inset }
-        home_news_1:
-            quality: 70
+        thumb_one_column_in:
+            quality: 80
             filters:
-                thumbnail: { size: [600, 320], mode: outbound }
-        home_news_2:
-            quality: 70
+                thumbnail: { size: [420, 420], mode: inset }
+        thumb_two_column_in:
+            quality: 80
             filters:
-                thumbnail: { size: [180, 160], mode: outbound }
-        home_news_3:
-            quality: 70
+                thumbnail: { size: [420, 420], mode: inset }
+        thumb_two_column_out:
+            quality: 80
             filters:
-                thumbnail: { size: [180, 160], mode: outbound }
-        home_news_4:
-            quality: 70
+                thumbnail: { size: [420, 420], mode: outbound }
+        thumb_three_column_in:
+            quality: 80
             filters:
-                thumbnail: { size: [180, 160], mode: outbound }
-        recipe:
-            quality: 70
+                thumbnail: { size: [420, 420], mode: inset }
+        thumb_three_column_out:
+            quality: 80
             filters:
-                thumbnail: { size: [600, 320], mode: outbound }
+                thumbnail: { size: [420, 420], mode: outbound }
+        thumb_four_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [420, 420], mode: inset }
+        thumb_four_column_out:
+            quality: 80
+            filters:
+                thumbnail: { size: [420, 420], mode: outbound }
+        thumb_five_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [420, 420], mode: inset }
+        thumb_six_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [460, 460], mode: inset }
+        thumb_seven_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [540, 540], mode: inset }
+        thumb_eight_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [620, 620], mode: inset }
+        thumb_nine_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [700, 700], mode: inset }
+        thumb_ten_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [780, 780], mode: inset }
+        thumb_eleven_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [860, 860], mode: inset }
+        thumb_twelve_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [940, 940], mode: inset }
+        thumb_thirteen_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [1024, 1024], mode: inset }
+        thumb_fourteen_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [1100, 1100], mode: inset }
+        thumb_fifteen_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [1180, 1180], mode: inset }
+        thumb_sixteen_column_in:
+            quality: 80
+            filters:
+                thumbnail: { size: [1260, 1260], mode: inset }
 
 
 # StofDoctrineExtension

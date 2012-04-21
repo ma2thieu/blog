@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    var nb_files = '{{ files | length }}';
+
+    $(document).ready(function() {
+        function addFile() {
+            var prototype = $("#files_collection").attr('data-prototype');
+            prototype = prototype.replace(/__name__/g, nb_files);
+            nb_files++;
+
+            $('#files_collection_items').append(prototype);
+        }
+
+        function deleteFile(target) {
+            if (confirm('Delete this file ?')) {
+                 target.parent().parent().parent().fadeTo(400, 0, function () {
+                     target.parent().parent().parent().remove();
+                 });
+             }
+        }
+
+        $('#files_add').on('click', function(e) {
+            e.preventDefault();
+            addFile();
+        });
+
+        $('#files_collection_items').on('click', 'a.file_delete', function(e) {
+            e.preventDefault();
+            deleteFile($(this));
+        });
+
+    });
+</script>
+

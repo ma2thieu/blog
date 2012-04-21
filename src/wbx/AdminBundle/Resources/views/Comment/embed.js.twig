@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    var nb_comments = '{{ comments | length }}';
+
+    $(document).ready(function() {
+        function addFile() {
+            var prototype = $("#comments_collection").attr('data-prototype');
+            prototype = prototype.replace(/__name__/g, nb_comments);
+            nb_comments++;
+
+            $('#comments_collection_items').append(prototype);
+        }
+
+        function deleteFile(target) {
+            if (confirm('Delete this comment ?')) {
+                 target.parent().parent().parent().fadeTo(400, 0, function () {
+                     target.parent().parent().parent().remove();
+                 });
+             }
+        }
+
+        $('#comments_add').on('click', function(e) {
+            e.preventDefault();
+            addFile();
+        });
+
+        $('#comments_collection_items').on('click', 'a.file_delete', function(e) {
+            e.preventDefault();
+            deleteFile($(this));
+        });
+
+    });
+</script>
+

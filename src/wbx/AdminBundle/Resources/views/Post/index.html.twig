@@ -22,6 +22,7 @@
             <thead>
                 <tr>
                     <th><a class="btn btn-success" href="{{ path('admin_post_new') }}"><i class="icon-plus icon-white"></i> New</a></th>
+                    <th></th>
                     <th>{{ pagination.sortable('Author', 'q.author')|raw }}</th>
                     <th>{{ pagination.sortable('Title', 'q.title')|raw }}</th>
                     <th>{{ pagination.sortable('Text', 'q.text')|raw }}</th>
@@ -32,6 +33,11 @@
                 <tr>
                     <td>
                         <a class="btn btn-small btn-primary" href="{{ path('admin_post_edit', { 'id': entity.id }) }}"><i class="icon-cog icon-white"></i> Edit</a>
+                    </td>
+                    <td>
+                        {% for file in entity.files %}
+                            <img src="{{ file.file.getWebPath() | imagine_filter('thumb_small_in') }}" />
+                        {% endfor %}
                     </td>
                     <td><a class="btn btn-mini" href="{{ path('admin_author_edit', { 'id': entity.author.id }) }}"><i class="icon-cog"></i> {{ entity.author }}</a></td>
                     <td>{{ entity.title }}</td>

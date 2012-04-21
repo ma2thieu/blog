@@ -155,7 +155,6 @@ class PostController extends Controller {
         $deleteForm = $this->_createDeleteForm($id);
 
         $request = $this->getRequest();
-
         $editForm->bindRequest($request);
 
         if ($editForm->isValid()) {

@@ -18,12 +18,4 @@
     </services>
     -->
 
-    <services>
-        <service id="liip_imagine.filter.loader.canvas" class="wbx\CoreBundle\CanvasFilterLoader">
-            <tag name="liip_imagine.filter.loader" loader="canvas" />
-        </service>
-    </services>
-
-
-
 </container>
