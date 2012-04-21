@@ -22,7 +22,7 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "550bee05123a592d5010415364396c4c7b20c65c"
+            "source-reference": "93e0089c1eb6f4d3a171b65986450ddb8c69271b"
         },
         {
             "package": "doctrine/orm",
@@ -142,7 +142,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "6c714095fa3e74c4a5466037f02e1845b9130d35",
+            "source-reference": "03ad8c932db16ecf8f595004331436a5e02ae656",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
@@ -153,7 +153,7 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "a929d0336b1b39b8e6de5547d81bd65a960ce31d",
+            "source-reference": "07a953e01622bf2d3f57ac4fcfa4724fa2143075",
             "alias": "1.7.9999999.9999999-dev"
         },
         {

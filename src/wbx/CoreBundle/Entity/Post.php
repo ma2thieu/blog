@@ -50,7 +50,7 @@ class Post {
     protected $files;
 
     /**
-     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post", cascade={"all"}, orphanRemoval=false)
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post", cascade={"all"}, orphanRemoval=true)
      */
     protected $comments;
 
