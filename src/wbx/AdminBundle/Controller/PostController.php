@@ -64,8 +64,6 @@ class PostController extends Controller {
      * @return array
      */
     public function newAction() {
-        $em = $this->getDoctrine()->getEntityManager();
-
         $entity = new Post();
         $form = $this->createForm(new PostType(), $entity);
 
